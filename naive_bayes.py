@@ -1,13 +1,14 @@
+"""Here we'll implement simple guassian naive bayes algorithm using sklearn.
+Gausian Naive bayes works on probablities and we assume that there is
+no covariance in between the dimensions or the features."""
+
 # Importing necessary libraries
-import pandas as pd
-from sklearn.naive_bayes import GaussianNB
-from sklearn.datasets import make_blobs
-import matplotlib.pyplot as plt
-import numpy as np
 import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_blobs
+from sklearn.naive_bayes import GaussianNB
 sns.set()
-pd.options.display.html.table_schema = True
-pd.options.display.max_rows = None
 
 # Generating data
 X, y = make_blobs(100, 2, centers=2)
@@ -17,12 +18,15 @@ plt.scatter(X[:, 0], X[:, 1])
 
 # model building
 model = GaussianNB()
-model.fit(X, y)
+model.fit(X, y)  # X fearures are trained with y labels
 
 # model prediction
 
-rng = np.random.RandomState(0)
-Xnew = [-6, -14] + [14, 18]*rng.rand(2000, 2)
-np.shape(Xnew)
-ynew = model.predict(Xnew)
-ynew
+# predicting on single value
+y1 = np.array([9.08, -2.21])
+model.predict([y1])
+
+# predicting on array of values
+y2 = np.random.randint(-10, 10, (10, 2))
+# give the same shape of the data here as provided in the train dataset i.e 2D
+model.predict(y2)
