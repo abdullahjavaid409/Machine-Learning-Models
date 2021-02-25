@@ -3,6 +3,7 @@ Gausian Naive bayes works on probablities and we assume that there is
 no covariance in between the dimensions or the features."""
 
 # Importing necessary libraries
+from sklearn.model_selection import train_test_split
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
@@ -20,13 +21,16 @@ plt.scatter(X[:, 0], X[:, 1])
 model = GaussianNB()
 model.fit(X, y)  # X fearures are trained with y labels
 
-# model prediction
+# Model Prediction
 
 # predicting on single value
 y1 = np.array([9.08, -2.21])
 model.predict([y1])
 
 # predicting on array of values
-y2 = np.random.randint(-10, 10, (10, 2))
+y2 = np.random.randint(-10, 10, (100, 2))
 # give the same shape of the data here as provided in the train dataset i.e 2D
 model.predict(y2)
+plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap='RdBu')
+lim = plt.axis()
+plt.scatter(y2[:, 0], y2[:, 1], c=y, s=50, cmap='RdBu')
