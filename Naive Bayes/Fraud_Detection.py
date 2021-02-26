@@ -48,10 +48,23 @@ model.fit(X_train, y_train)  # training of naive bayes
 
 # Model predictions
 y_pred = model.predict(X_test)
-
+y_pred
 # here are the probablities of the individual credict card
 y_pred_prob = model.predict_proba(X_test)
-
+y_pred_prob
 y_train_pred = model.predict(X_train)
-# Confusion matrix is a handy tool to check how much are the true predictions or not
-confusion_matrix(y_train, y_train_pred)  # both parameter of it are labels
+
+# Confusion matrix is a handy tool to check how much are the true predictions.
+confusion_mat = confusion_matrix(y_train, y_train_pred)  # both parameter of it are labels
+confusion_mat
+
+# from the heatmap it can be shown easily that very small number of trasanctionsa
+# are Fraudelent major are non-Fraudelent
+sns.heatmap(confusion_mat, square=True, annot=True, fmt='d',)
+
+# Calculating precison and f1 scares on the predctions
+f1_score(y_test, y_pred)
+precision_score(y_test, y_pred)
+
+f1_score(y_train, y_train_pred)
+precision_score(y_train, y_train_pred)
