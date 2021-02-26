@@ -3,7 +3,6 @@ Gausian Naive bayes works on probablities and we assume that there is
 no covariance in between the dimensions or the features."""
 
 # Importing necessary libraries
-from sklearn.model_selection import train_test_split
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
@@ -34,3 +33,5 @@ model.predict(y2)
 plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap='RdBu')
 lim = plt.axis()
 plt.scatter(y2[:, 0], y2[:, 1], c=y, s=50, cmap='RdBu')
+
+model.predict_proba([[0.1, 0.3]])
