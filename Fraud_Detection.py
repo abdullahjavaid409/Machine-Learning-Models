@@ -2,6 +2,9 @@
 And predict what will the fraudelent transactions!"""
 
 # importing necessary libraries
+from sklearn.metrics import confusion_matrix, precision_score, accuracy_score, f1_score
+from sklearn.naive_bayes import GaussianNB
+from sklearn.model_selection import train_test_split
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -25,3 +28,30 @@ ax.pie(val_count, explode=[0, 0.1], autopct='%1.1f%%',
 plt.axis('equal')
 # print(plt.pie.__doc__)
 # ----------------
+
+# Splitting data in train and test using sklearn train_test_split
+
+y = df["Class"].values
+X = df.drop(['Class'], axis=1).values
+X.shape
+y.shape
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = GaussianNB()
+
+X_train.shape
+y_train.shape
+
+# NOTE: we know that the in this ml model there is no storing of the weighths and
+# optimization techniques, it only predict the expected probablities that's why it is a fast model.
+model.fit(X_train, y_train)  # training of naive bayes
+
+# Model predictions
+y_pred = model.predict(X_test)
+
+# here are the probablities of the individual credict card
+y_pred_prob = model.predict_proba(X_test)
+
+y_train_pred = model.predict(X_train)
+# Confusion matrix is a handy tool to check how much are the true predictions or not
+confusion_matrix(y_train, y_train_pred)  # both parameter of it are labels
