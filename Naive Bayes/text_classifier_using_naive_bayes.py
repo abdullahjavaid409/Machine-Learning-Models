@@ -43,4 +43,3 @@ sns.heatmap(confusion_mat, fmt='d', annot=True,
 # Testing
 pred = model.predict(["let's go to pluto"])
 train.target_names[pred[0]]
-# test
