@@ -14,6 +14,7 @@ __Assumption__ : There should be no covariance between the variables or the dime
 - For very well seperated data it performs fantastic.
 - It handles missing values.
 - It don't requires feature scaling.
+- Also it don't require feature scaling as most of the algorithms require.
 # Disadvantages
 - Major disadvantage of Naive Bayes is that we know in real life data it is almost impossible that we get data that is totally independent and have zero covariance. That's why as the features of the data increases the probability that they relate to each other also increases and this ultimately affects the model performance.
 - If for categorical data any sample which is not seen in the training and encountered in the test data then model will assign zero probability for it.
