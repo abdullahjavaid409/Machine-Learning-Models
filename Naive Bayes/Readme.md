@@ -21,4 +21,5 @@ __Assumption__ : There should be no covariance between the variables or the dime
 - If for categorical data any sample which is not seen in the training and encountered in the test data then model will assign zero probability for it.
 # Applications
 - It is used for sentiment analysis.
-- It is used for Spam classification.
+- It is used for spam classification.
+- It is used for twitter sentiment analysis.
