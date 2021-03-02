@@ -4,6 +4,9 @@ theorum based on __probablities__.
 
 __Assumption__ : There should be no covariance between the variables or the dimensions._
 
+_Download dataset(creditcardfraud) :_ https://www.kaggle.com/mlg-ulb/creditcardfraud/download
+
+_Load dataset(text classifier)_ : from sklearn.datasets import fetch_20newsgroups
 # Advantages
 - Naive bayes models are _Fast_. It converges faster to the global minimum.
 - Simple algorithms.
