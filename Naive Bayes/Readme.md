@@ -24,3 +24,5 @@ __Assumption__ : There should be no covariance between the variables or the dime
 - It is used for spam classification.
 - It is used for twitter sentiment analysis.
 - Also for document categorization.
+
+_If you want some model that works well and make predictions fast then it is a good choice._
