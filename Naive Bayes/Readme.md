@@ -23,3 +23,4 @@ __Assumption__ : There should be no covariance between the variables or the dime
 - It is used for sentiment analysis.
 - It is used for spam classification.
 - It is used for twitter sentiment analysis.
+- Also for document categorization.
