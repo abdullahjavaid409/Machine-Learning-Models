@@ -42,7 +42,7 @@ model = GaussianNB()
 X_train.shape
 y_train.shape
 
-# NOTE: we know that the in this ml model there is no storing of the weighths and
+# #list2:0 we know that the in this ml model there is no storing of the weighths and
 # optimization techniques, it only predict the expected probablities that's why it is a fast model.
 model.fit(X_train, y_train)  # training of naive bayes
 
