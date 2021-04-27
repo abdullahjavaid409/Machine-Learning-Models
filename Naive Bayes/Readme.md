@@ -1,4 +1,10 @@
 # Naive Bayes
+
+![Alt Text](https://github.com/SyedArsalanAmin/Machine-Learning-Models/blob/master/nb_gif.gif)
+
+
+
+
 Naive bayes is a machine learning algorithm based on bayes theorum. Which is primarily a
 theorum based on __probablities__.
 
